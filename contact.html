@@ -6,8 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/components/contact.css" rel="stylesheet" />
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contactContainer">
+        <div id="errorMessage">Error message</div>
+        <form id="formContainer">
+            <div>
+                <label>
+                    Name (required)
+                    <input class="fullname" id="fullName">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Subject (minimum 10 characters)
+                    <input class="subject" id="subject">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Email (required)
+                    <input class="email" id="email">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Address (minimum 25 characters)
+                    <input class="address" id="address">
+                </label>
+            </div>
+            <button>Send</button>
+        </form>
+    </main>
     <script src="js/script.js"></script>
 </body>
 </html>
