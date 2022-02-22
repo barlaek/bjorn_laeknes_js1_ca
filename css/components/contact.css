@@ -19,17 +19,13 @@ input {
     font-size: .9rem;
 }
 
-label {
-    display: block;
-}
-
 button {
     background: blue;
     border: none;
     width: 200px;
     padding: 1rem;
     color: white;
-    margin-top: 10px;
+    margin-top: .5rem;
     cursor: pointer;
     border-radius: 0.5rem;
 }
