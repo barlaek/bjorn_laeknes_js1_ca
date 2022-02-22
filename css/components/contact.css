@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+.contactContainer {
+    max-width: 50rem;
+    margin: auto;
+}
+form {
+    padding: 2em;
+    background: orange;
+    border-radius: .5rem;
+}
+
+input {
+    width: 100%;
+    margin: .2rem 0 .2rem;
+    padding: .5rem;
+    font-size: .5rem;
+}
+
+label {
+    display: block;
+}
+
+
+button {
+    background: blue;
+    border: none;
+    width: 200px;
+    padding: 1rem;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+button:disabled {
+    background: lightgray;
+}

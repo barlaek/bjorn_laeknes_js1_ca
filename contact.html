@@ -19,35 +19,36 @@
         </nav>
     </header>
     <main class="contactContainer">
-        <div id="errorMessage">Error message</div>
+        <div id="successMessage"></div>
         <form id="formContainer">
             <div>
                 <label>
                     Name (required)
-                    <input class="fullname" id="fullName">
+                    <input name="fullname" id="fullName">
                 </label>
             </div>
             <div>
                 <label>
                     Subject (minimum 10 characters)
-                    <input class="subject" id="subject">
+                    <input name="subject" id="subject">
                 </label>
             </div>
             <div>
                 <label>
                     Email (required)
-                    <input class="email" id="email">
+                    <input name="email" id="email">
                 </label>
             </div>
             <div>
                 <label>
                     Address (minimum 25 characters)
-                    <input class="address" id="address">
+                    <input name="address" id="address">
                 </label>
             </div>
-            <button>Send</button>
+            <button disabled>Send</button>
         </form>
     </main>
-    <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 </html>
