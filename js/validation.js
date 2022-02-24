@@ -1,29 +1,47 @@
 const form = document.querySelector("form");
+
 const fullName = document.querySelector("#fullName");
+const fullNameError = document.querySelector("#fullNameError");
+
 const subject = document.querySelector("#subject");
+const subjectError = document.querySelector("#subjectError");
+
 const email = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+
 const address = document.querySelector("#address");
+const addressError = document.querySelector("#addressError");
+
 const successMessage = document.querySelector("#successMessage");
+
 const button = document.querySelector("button");
-
-function checkIfButtonIsDisabled() {
-    if(checkLength(fullName.value, 1) && checkLength(subject.value, 10) && checkLength(address.value, 25) && validateEmail(email.value)) {
-        button.disabled = false;
-    } else {
-        successMessage.innerHTML = "";
-        button.disabled = true;
-    }
-}
-
-fullName.addEventListener("keyup", checkIfButtonIsDisabled);
-subject.addEventListener("keyup", checkIfButtonIsDisabled);
-email.addEventListener("keyup", checkIfButtonIsDisabled);
-address.addEventListener("keyup", checkIfButtonIsDisabled);
 
 function submitForm(event) {
     event.preventDefault();
-    successMessage.innerHTML = `<div class="successMessage">Your message has been sent<div>`;
-    form.reset();
+
+    if (checkLength(fullName.value, 1)) {
+        fullNameError.style.display = "none";
+    } else {
+        fullNameError.style.display = "block";
+    }
+
+    if (checkLength(subject.value, 10)) {
+        subjectError.style.display = "none";
+    } else {
+        subjectError.style.display = "block";
+    }
+
+    if (checkLength(address.value, 25)) {
+        addressError.style.display = "none";
+    } else {
+        addressError.style.display = "block";
+    }
+
+    if (validateEmail(email.value)) {
+        emailError.style.display = "none";
+    } else {
+        emailError.style.display = "block";
+    }
 }
 
 form.addEventListener("submit", submitForm);

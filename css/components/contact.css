@@ -1,6 +1,3 @@
-* {
-    box-sizing: border-box;
-}
 
 .contactContainer {
     max-width: 50rem;
@@ -43,4 +40,10 @@ button:disabled {
     border: none;
     border-radius: .5rem;
     margin-bottom: .5rem;
+}
+
+.form-error {
+    display: none;
+    color: red;
+    font-size: .9rem;
 }
