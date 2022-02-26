@@ -24,11 +24,13 @@ async function getPlanets() {
         const diameter = planets[i].diameter;
         const climate = planets[i].climate;
 
-        endpointContainer.innerHTML += `<div class="rest-det">
+        endpointContainer.innerHTML += `<a href="details.html>
+                                            <div class="rest-det">
                                             <h3>${name}</h3>
                                             <p>${diameter}</p>
                                             <p>${climate}</p>
-                                        </div>`
+                                            </div>
+                                            </a>`
     } catch (error) {
         console.log(error);
     }
