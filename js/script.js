@@ -1,6 +1,6 @@
 const endpointContainer = document.querySelector(".endpoint");
 
-const swURL = "https://swapi.dev/api/planets"
+const swURL = "https://swapi.dev/api/planets/";
 
 async function getPlanets() {
     try {
@@ -14,23 +14,30 @@ async function getPlanets() {
 
         console.log(planets);
 
-        for (var i = 0; i < planets.length; i++) {
-            if (i === 2) {
-                break;
-            }
-        }
-
-        const name = planets[i].name;
-        const diameter = planets[i].diameter;
-        const climate = planets[i].climate;
-
-        endpointContainer.innerHTML += `<a href="details.html>
+        planets.forEach(function(planet) {
+            endpointContainer.innerHTML += `<a href="details.html?id=${planet.id}">
                                             <div class="rest-det">
-                                            <h3>${name}</h3>
-                                            <p>${diameter}</p>
-                                            <p>${climate}</p>
-                                            </div>
-                                            </a>`
+                                            <h3>${planet.name}</h3>
+                                            </a>`;
+        });
+
+        // for (var i = 0; i < planets.length; i++) {
+        //     if (i === 2) {
+        //         break;
+        //     }
+        // }
+
+        // const name = planets[i].name;
+        // const diameter = planets[i].diameter;
+        // const climate = planets[i].climate;
+
+        // endpointContainer.innerHTML += `<a href="details.html>
+        //                                     <div class="rest-det">
+        //                                     <h3>${name}</h3>
+        //                                     <p>${diameter}</p>
+        //                                     <p>${climate}</p>
+        //                                     </div>
+        //                                     </a>`
     } catch (error) {
         console.log(error);
     }
