@@ -2,20 +2,23 @@ const detailsContainer = document.querySelector(".planet-details");
 
 const queryString = document.location.search;
 
-const params = URLSearchParams(queryString);
+const params = new URLSearchParams(queryString);
 
-const id = params.get("id");
+const id = params.get("name");
+
+console.log(id)
 
 const url = "https://swapi.dev/api/planets/" + id;
 
 async function getPlanet() {
     try {
         const response = await fetch(url);
-        const details = response.json();
+        const planets = response.json();
 
-        console.log(details);
+        console.log(planets);
 
-        createHTML(details);
+        createHTML(planets);
+    
     } catch (error) {
         console.log(error)
     }
@@ -23,8 +26,8 @@ async function getPlanet() {
 
 getPlanet();
 
-function createHTML(details) {
-    detailsContainer.innerHTML = `<h1>${details.name}</h1>
-                                    <div>Diameter: ${details.diameter}</div>
-                                    <div>Climate: ${details.climate}</div>`
+function createHTML(planets) {
+    detailsContainer.innerHTML = `<h1>${planets.name}</h1>
+                                    <div>Diameter: ${planets.diameter}</div>
+                                    <div>Climate: ${planets.climate}</div>`
 }

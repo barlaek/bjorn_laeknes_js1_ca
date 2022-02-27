@@ -1,6 +1,6 @@
 const endpointContainer = document.querySelector(".endpoint");
 
-const swURL = "https://swapi.dev/api/planets/";
+const swURL = "https://swapi.dev/api/planets";
 
 async function getPlanets() {
     try {
@@ -15,7 +15,7 @@ async function getPlanets() {
         console.log(planets);
 
         planets.forEach(function(planet) {
-            endpointContainer.innerHTML += `<a href="details.html?id=${planet.id}">
+            endpointContainer.innerHTML += `<a href="details.html?id=${planet.name}">
                                             <div class="rest-det">
                                             <h3>${planet.name}</h3>
                                             </a>`;
