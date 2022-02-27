@@ -14,14 +14,16 @@ async function getPlanets() {
 
         console.log(planets);
 
-        planets.forEach(function(planet) {
-            endpointContainer.innerHTML += `<a href="details.html?id=${planet.name}">
-                                            <div class="rest-det">
-                                            <h3>${planet.name}</h3>
-                                            </a>`;
-        });
+        planets.forEach(function callback(planets, index) {
+          endpointContainer.innerHTML += `<a href="details.html?id=${index + 1}" >
+                                        <div class="rest-det">
+                                        <h3>${planets.name}</h3>
+                                        </div>
+                                        </a>`;
+                                       })
     } catch (error) {
         console.log(error);
+        endpointContainer.innerHTML = displayError("A Sith Lord stole the API");
     }
 }
 

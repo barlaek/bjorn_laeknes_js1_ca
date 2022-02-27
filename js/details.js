@@ -8,32 +8,29 @@ const id = params.get("id");
 
 console.log(id)
 
-const url = "https://swapi.dev/api/planets/?" + id;
+const url = "https://swapi.dev/api/planets/" + id;
 
 async function getPlanet() {
     try {
         const response = await fetch(url);
-        const details = await response.json();
+        const detail = await response.json();
 
         detailsContainer.innerHTML = "";
 
-        console.log(details);
+        console.log(detail);
 
-        const planets = details.results
-
-        console.log(planets);
-
-        createHTML(planets);
+        createHTML(detail);
     
     } catch (error) {
         console.log(error)
+        detailsContainer.innerHTML = displayError("A Sith Lord stole the API");
     }
 }
 
 getPlanet();
 
-function createHTML(planets) {
-    detailsContainer.innerHTML = `<h1>${planets.name}</h1>
-                                    <div>Diameter: ${planets.diameter}</div>
-                                    <div>Climate: ${planets.climate}</div>`
+function createHTML(planet) {
+    detailsContainer.innerHTML = `<h1>${planet.name}</h1>
+                                    <div>Diameter: ${planet.diameter}</div>
+                                    <div>Climate: ${planet.climate}</div>`
 }

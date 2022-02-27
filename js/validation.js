@@ -42,9 +42,6 @@ function submitForm(event) {
     } else {
         emailError.style.display = "block";
     }
-
-    // successMessage.innerHTML = `<div class="successMessage">Your message has been sendt!</div>`
-    // form.reset()
 }
 
 form.addEventListener("submit", submitForm);
