@@ -1,1 +1,3 @@
 # bjorn_laeknes_js1_ca
+
+My code for this assignment is unfortunately a hot mess this time. There were a couple things in my personal life that stole a little too much time from schoolwork. This is why the contact page is still with ridiculous test-colors and is, along with the loading div, the only styled element in the directory. Fortunately, the code works, which, I hope is enough for this assignment. Thank you.
