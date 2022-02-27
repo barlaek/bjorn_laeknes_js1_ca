@@ -4,7 +4,7 @@ const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
 
-const id = params.get("name");
+const id = params.get("id");
 
 console.log(id)
 
@@ -13,9 +13,13 @@ const url = "https://swapi.dev/api/planets/" + id;
 async function getPlanet() {
     try {
         const response = await fetch(url);
-        const planets = response.json();
+        const details = await response.json();
 
-        console.log(planets);
+        console.log(details);
+
+        const planets = details.results;
+
+        console.log(planets)
 
         createHTML(planets);
     
