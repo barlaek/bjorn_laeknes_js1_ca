@@ -15,6 +15,8 @@ async function getPlanet() {
         const response = await fetch(url);
         const details = await response.json();
 
+        detailsContainer.innerHTML = "";
+
         console.log(details);
 
         const planets = details.results
