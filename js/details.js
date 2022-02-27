@@ -8,7 +8,7 @@ const id = params.get("id");
 
 console.log(id)
 
-const url = "https://swapi.dev/api/planets/" + id;
+const url = "https://swapi.dev/api/planets/?" + id;
 
 async function getPlanet() {
     try {
@@ -17,9 +17,9 @@ async function getPlanet() {
 
         console.log(details);
 
-        const planets = details.results;
+        const planets = details.results
 
-        console.log(planets)
+        console.log(planets);
 
         createHTML(planets);
     
